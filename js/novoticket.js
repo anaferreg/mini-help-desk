@@ -13,6 +13,8 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
         status: "Aberto"
     };
 
+    alert("O que vou enviar agora: " + document.getElementById('title').value);
+
     try {
         const resp = await fetch(API_BASE_URL, {
             method: "POST",
