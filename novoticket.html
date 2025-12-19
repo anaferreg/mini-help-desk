@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Chamado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50 min-h-screen p-10 font-sans flex items-center justify-center">
+
+    <div class="w-full max-w-2xl bg-white p-8 rounded-xl shadow-lg border-t-4 border-red-500">
+        <h2 class="text-2xl font-bold mb-6 text-red-700 border-b border-orange-100 pb-2">Abrir Novo Chamado</h2>
+        
+        <form id="formTicket" class="space-y-5">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Título do Problema</label>
+                <input type="text" id="title" class="w-full border-gray-300 focus:border-orange-500 focus:ring-orange-500 rounded-md shadow-sm p-2 border outline-none transition" required placeholder="Ex: Internet não conecta">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Descrição Detalhada</label>
+                <textarea id="description" class="w-full border-gray-300 focus:border-orange-500 focus:ring-orange-500 rounded-md shadow-sm p-2 border outline-none transition" rows="3"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Categoria</label>
+                    <select id="category" class="w-full border-gray-300 focus:border-orange-500 focus:ring-orange-500 rounded-md shadow-sm p-2 border outline-none bg-white">
+                        <option value="Acesso">Acesso</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Software">Software</option>
+                        <option value="Rede">Rede</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Prioridade</label>
+                    <select id="priority" class="w-full border-gray-300 focus:border-orange-500 focus:ring-orange-500 rounded-md shadow-sm p-2 border outline-none bg-white">
+                        <option value="Baixa">Baixa</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta" class="text-red-600 font-bold">Alta</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="bg-orange-50 p-4 rounded-md border border-orange-100 grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div>
+                    <label class="block text-xs uppercase text-orange-800 font-bold mb-1">Seu Nome</label>
+                    <input type="text" id="reqName" class="w-full border-orange-200 focus:border-orange-500 rounded p-1.5 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-orange-800 font-bold mb-1">Seu Email</label>
+                    <input type="email" id="reqEmail" class="w-full border-orange-200 focus:border-orange-500 rounded p-1.5 text-sm">
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-3 mt-8 pt-4 border-t border-gray-100">
+                <a href="index.html" class="px-5 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition">Cancelar</a>
+                <button type="submit" class="px-6 py-2 bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold rounded-lg shadow hover:shadow-lg hover:from-red-700 hover:to-orange-700 transition transform hover:-translate-y-0.5">
+                    Salvar Chamado
+                </button>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="js/novoticket.js"></script>
+</body>
+</html>
