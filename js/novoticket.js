@@ -13,6 +13,8 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
         status: "Aberto"
     };
 
+    console.log(dados);
+
     alert("O que vou enviar agora: " + document.getElementById('title').value);
 
     try {
