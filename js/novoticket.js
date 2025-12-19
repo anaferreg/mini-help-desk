@@ -20,8 +20,12 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
     try {
         const resp = await fetch(API_BASE_URL, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dados)
+            mode: "cors", 
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json" 
+            },
+            body: JSON.stringify(dados) 
         });
 
         if(resp.ok) {
