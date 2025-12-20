@@ -2,64 +2,48 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Detalhes do Chamado</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Detalhes</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-orange-50 min-h-screen p-10 font-sans flex items-center justify-center">
-
-    <div class="w-full max-w-2xl bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-500">
-        
-        <div class="flex justify-between items-start mb-6 border-b border-gray-100 pb-4">
-            <div>
-                <h2 class="text-2xl font-bold text-gray-800">Detalhes do Chamado</h2>
-                <p class="text-sm text-gray-500">Visualize e edite as informações</p>
-            </div>
-            <button onclick="excluir()" class="text-red-500 hover:text-red-700 text-sm font-semibold border border-red-100 bg-red-50 px-3 py-1 rounded hover:bg-red-100 transition">
-                🗑️ Excluir
-            </button>
+<body>
+    <div class="container" style="max-width: 500px; margin-top: 50px; border-left: 4px solid #ea580c;">
+        <div class="flex">
+            <h2>Detalhes</h2>
+            <button id="excluirBtn" class="btn btn-danger">Excluir</button>
         </div>
 
-        <div class="space-y-6">
-            <div>
-                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Título</label>
-                <div class="text-lg font-medium text-gray-900 bg-gray-50 p-3 rounded border border-gray-200">
-                    <h3 id="tituloDisplay">Carregando...</h3>
-                </div>
-            </div>
+        <div class="form-group mt-20">
+            <label>Título</label>
+            <div id="tituloDisplay" style="background:#eee; padding:10px; border-radius:4px;">Carregando...</div>
+        </div>
 
-            <div class="grid grid-cols-2 gap-4 bg-orange-50 p-5 rounded-lg border border-orange-100">
-                <div>
-                    <label class="block text-sm font-bold text-orange-900 mb-1">Status</label>
-                    <select id="status" class="w-full border-orange-200 rounded p-2 text-gray-700 focus:ring-orange-500">
-                        <option value="Aberto">Aberto</option>
-                        <option value="Em Andamento">Em Andamento</option>
-                        <option value="Resolvido">Resolvido</option>
-                        <option value="Cancelado">Cancelado</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-orange-900 mb-1">Prioridade</label>
-                    <select id="priority" class="w-full border-orange-200 rounded p-2 text-gray-700 focus:ring-orange-500">
-                        <option value="Baixa">Baixa</option>
-                        <option value="Media">Media</option>
-                        <option value="Alta">Alta</option>
-                    </select>
-                </div>
+        <div class="flex">
+            <div class="form-group" style="flex:1">
+                <label>Status</label>
+                <select id="status">
+                    <option value="Aberto">Aberto</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Resolvido">Resolvido</option>
+                </select>
             </div>
+            <div class="form-group" style="flex:1">
+                <label>Prioridade</label>
+                <select id="priority">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Media">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+            </div>
+        </div>
 
-            <div>
-                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Descrição Original</label>
-                <div class="text-gray-600 bg-gray-50 p-4 rounded border border-gray-200 min-h-[100px]">
-                    <p id="descDisplay">...</p>
-                </div>
-            </div>
+        <div class="form-group">
+            <label>Descrição</label>
+            <div id="descDisplay" style="background:#eee; padding:10px; border-radius:4px; min-height:60px;">...</div>
+        </div>
 
-            <div class="flex justify-end gap-3 mt-8">
-                <a href="index.html" class="px-5 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition">Voltar</a>
-                <button onclick="salvarAlteracoes()" class="px-6 py-2 bg-orange-600 text-white font-bold rounded-lg shadow hover:bg-orange-700 transition">
-                    Salvar Alterações
-                </button>
-            </div>
+        <div class="flex mt-20">
+            <a href="index.html">Voltar</a>
+            <button id="salvarBtn" class="btn btn-primary">Salvar Alterações</button>
         </div>
     </div>
     <script type="module" src="js/detalhes.js"></script>

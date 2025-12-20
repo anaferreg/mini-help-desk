@@ -1,5 +1,8 @@
 import { API_BASE_URL } from './config.js';
 
+const excluirBtn = document.getElementById('excluirBtn').excluir();
+const salvarBtn = document.getElementById('salvarBtn');
+
 const params = new URLSearchParams(window.location.search);
 const idTicket = params.get("id");
 
@@ -20,7 +23,7 @@ async function carregarDados() {
         document.getElementById('priority').value = ticket.priority;
 
     } catch (e) {
-        alert("Erro ao buscar ticket");
+        alert("Erro ao buscar o chamado");
     }
 }
 
@@ -32,7 +35,7 @@ async function salvarAlteracoes() {
 
     try {
         const resp = await fetch(`${API_BASE_URL}/${idTicket}`, {
-            method: "PUT", // Ou PATCH
+            method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(novosDados)
         });

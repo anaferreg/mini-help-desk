@@ -1,0 +1,66 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7ed;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Títulos e Textos */
+h1, h2 { color: #b91c1c; }
+p { color: #666; font-size: 14px; }
+
+/* Botões */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-primary { background-color: #ea580c; color: white; }
+.btn-primary:hover { background-color: #c2410c; }
+.btn-danger { background-color: #fee2e2; color: #ef4444; border: 1px solid #ef4444; }
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #fed7aa;
+}
+
+th { background-color: #ffedd5; color: #7c2d12; }
+
+/* Formulários */
+.form-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; font-weight: bold; }
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante para não passar da largura */
+}
+
+/* Layout Auxiliar */
+.flex { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.mt-20 { margin-top: 20px; }

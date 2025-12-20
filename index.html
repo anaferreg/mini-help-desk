@@ -3,61 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Painel Helpdesk</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-orange-50 min-h-screen p-10 font-sans">
-
-    <div class="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-orange-100">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+<body>
+    <div class="container">
+        <div class="flex">
             <div>
-                <h1 class="text-3xl font-bold text-red-700">Painel Helpdesk</h1>
-                <p class="text-gray-500 text-sm">Gerencie seus tickets com eficiência</p>
+                <h1>Painel Helpdesk</h1>
+                <p>Gerencie seus tickets</p>
             </div>
-            <a href="novoticket.html" class="bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold px-6 py-2 rounded-lg shadow hover:from-orange-600 hover:to-red-700 transition-all transform hover:-translate-y-0.5">
-                + Novo Chamado
-            </a>
+            <a href="novoticket.html" class="btn btn-primary">+ Novo Chamado</a>
         </div>
 
-        <div class="bg-orange-50 p-4 rounded-lg border border-orange-200 flex flex-col md:flex-row gap-3 mb-6">
-            <input type="text" id="busca" placeholder="Buscar por título..." class="border-orange-200 focus:ring-orange-500 focus:border-orange-500 p-2 rounded-md flex-1 outline-none border">
-            
-            <select id="filtroStatus" class="border-orange-200 focus:ring-orange-500 p-2 rounded-md outline-none border bg-white text-gray-700">
+        <div class="flex mt-20" style="background: #ffedd5; padding: 15px; border-radius: 8px;">
+            <input type="text" id="busca" placeholder="Buscar por título...">
+            <select id="filtroStatus">
                 <option value="">Todos os Status</option>
                 <option value="Aberto">Aberto</option>
                 <option value="Em Andamento">Em Andamento</option>
                 <option value="Resolvido">Resolvido</option>
-                <option value="Cancelado">Cancelado</option>
             </select>
-            
-            <button onclick="carregarTickets()" class="bg-orange-600 text-white px-6 py-2 rounded-md hover:bg-orange-700 font-medium transition-colors">
-                Filtrar
-            </button>
+            <button onclick="carregarTickets()" class="btn btn-primary">Filtrar</button>
         </div>
 
-        <div class="overflow-hidden rounded-lg border border-orange-200">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="bg-orange-100 text-orange-900 border-b border-orange-200">
-                        <th class="p-4 font-semibold">Título</th>
-                        <th class="p-4 font-semibold">Categoria</th>
-                        <th class="p-4 font-semibold">Prioridade</th>
-                        <th class="p-4 font-semibold">Status</th>
-                        <th class="p-4 font-semibold">Ação</th>
-                    </tr>
-                </thead>
-                <tbody id="tabela-corpo" class="divide-y divide-orange-100">
-                    </tbody>
-            </table>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Categoria</th>
+                    <th>Prioridade</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-corpo"></tbody>
+        </table>
 
-        <div class="flex justify-between items-center mt-6 text-sm text-gray-600">
-            <button id="btnAnt" onclick="mudarPagina(-1)" class="px-4 py-2 bg-white border border-orange-200 rounded hover:bg-orange-50 disabled:opacity-50 text-orange-700">
-                ← Anterior
-            </button>
-            <span id="infoPagina" class="font-medium bg-orange-100 px-3 py-1 rounded text-orange-800">Página 1</span>
-            <button id="btnProx" onclick="mudarPagina(1)" class="px-4 py-2 bg-white border border-orange-200 rounded hover:bg-orange-50 disabled:opacity-50 text-orange-700">
-                Próxima →
-            </button>
+        <div class="flex mt-20">
+            <button id="btnAnt" onclick="mudarPagina(-1)" class="btn">Anterior</button>
+            <span id="infoPagina">Página 1</span>
+            <button id="btnProx" onclick="mudarPagina(1)" class="btn">Próxima</button>
         </div>
     </div>
     <script type="module" src="js/index.js"></script>
