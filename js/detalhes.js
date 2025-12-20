@@ -31,7 +31,7 @@ async function salvarAlteracoes() {
     };
 
     try {
-        const resp = await fetch(`${API_URL}/${idTicket}`, {
+        const resp = await fetch(`${API_BASE_URL}/${idTicket}`, {
             method: "PUT", // Ou PATCH
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(novosDados)
@@ -50,7 +50,7 @@ async function salvarAlteracoes() {
 async function excluir() {
     if(confirm("Tem certeza que deseja excluir?")) {
         try {
-            await fetch(`${API_URL}/${idTicket}`, { method: "DELETE" });
+            await fetch(`${API_BASE_URL}/${idTicket}`, { method: "DELETE" });
             alert("Excluído!");
             window.location.href = "index.html";
         } catch (e) {
