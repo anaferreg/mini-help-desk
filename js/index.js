@@ -46,8 +46,8 @@ async function carregarTickets() {
         });
 
         document.getElementById('infoPagina').innerText = `Página ${paginaAtual}`;
-        document.getElementById('btnProx').disabled = !dados.nextPage;
-        document.getElementById('btnAnt').disabled = paginaAtual === 1;
+        document.getElementById('proxBtn').disabled = !dados.nextPage;
+        document.getElementById('antBtn').disabled = paginaAtual === 1;
 
     } catch (erro) {
         alert("Erro ao carregar: " + erro);
