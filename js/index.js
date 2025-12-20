@@ -28,17 +28,17 @@ async function carregarTickets() {
 
         lista.forEach(ticket => {
             const linha = `
-                <tr class="border-b hover:bg-gray-50">
-                    <td class="p-3 font-medium">${ticket.title}</td>
-                    <td class="p-3">${ticket.category}</td>
-                    <td class="p-3">
-                        <span class="${corBadge(ticket.priority)} px-2 py-1 rounded text-xs text-white">
+                <tr class="row-hover">
+                    <td>${ticket.title}</td>
+                    <td>${ticket.category}</td>
+                    <td>
+                        <span class="${corBadge(ticket.priority)}">
                             ${ticket.priority}
                         </span>
                     </td>
-                    <td class="p-3">${ticket.status}</td>
-                    <td class="p-3">
-                        <a href="detalhes.html?id=${ticket.id}" class="text-blue-600 hover:underline">Detalhes</a>
+                    <td>${ticket.status}</td>
+                    <td>
+                        <a href="detalhes.html?id=${ticket.id}" class="link-detalhes">Detalhes</a>
                     </td>
                 </tr>
             `;
@@ -56,15 +56,31 @@ async function carregarTickets() {
 }
 
 function corBadge(prioridade) {
-    if(prioridade === 'Alta') return 'bg-red-100 text-red-800 border border-red-200 font-bold';
-    if(prioridade === 'Media') return 'bg-orange-100 text-orange-800 border border-orange-200 font-medium';
-    
-    return 'bg-green-100 text-green-800 border border-green-200';
+    if(prioridade === 'Alta') return 'badge badge-alta';
+    if(prioridade === 'Media') return 'badge badge-media';
+    return 'badge badge-baixa';
 }
 
 function mudarPagina(direcao) {
     paginaAtual += direcao;
     carregarTickets();
 }
+
+document.getElementById('filtrarBtn').addEventListener('click', () => {
+    paginaAtual = 1;
+    carregarTickets();
+});
+
+document.getElementById('antBtn').addEventListener('click', () => {
+    if (paginaAtual > 1) {
+        paginaAtual--;
+        carregarTickets();
+    }
+});
+
+document.getElementById('proxBtn').addEventListener('click', () => {
+    paginaAtual++;
+    carregarTickets();
+});
 
 carregarTickets();

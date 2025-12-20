@@ -1,8 +1,5 @@
 import { API_BASE_URL } from './config.js';
 
-const excluirBtn = document.getElementById('excluirBtn').excluir();
-const salvarBtn = document.getElementById('salvarBtn');
-
 const params = new URLSearchParams(window.location.search);
 const idTicket = params.get("id");
 
@@ -61,5 +58,13 @@ async function excluir() {
         }
     }
 }
+
+document.getElementById('excluirBtn').addEventListener('click', () => {
+    excluir();
+});
+
+document.getElementById('salvarBtn').addEventListener('click', () => {
+    salvarAlteracoes();
+});
 
 carregarDados();
