@@ -40,7 +40,8 @@ async function salvarAlteracoes() {
         if(resp.ok) {
             alert("Atualizado com sucesso!");
         } else {
-            alert("Erro ao atualizar");
+            const erro = await resp.json();
+            alert("Erro:" + JSON.stringify(erro));
         }
     } catch (e) {
         alert("Erro de conexão");
