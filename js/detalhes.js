@@ -65,7 +65,7 @@ async function salvarAlteracoes() {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 }
             }).showToast();
-            window.location.href = "index.html";
+            //window.location.href = "index.html";
         } else {
             const erro = await resp.json();
             Toastify({
