@@ -14,39 +14,37 @@ async function carregarTickets() {
 
     try {
         const resposta = await fetch(url);
-const dados = await resposta.json();
+        const dados = await resposta.json();
 
-const corpoTabela = document.getElementById('tabela-corpo');
-corpoTabela.innerHTML = "";
+        const corpoTabela = document.getElementById('tabela-corpo');
+        corpoTabela.innerHTML = "";
 
-const lista = dados.items || dados; 
+        const lista = dados.items || dados; 
+        
+        if(lista.length === 0) {
+            corpoTabela.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-gray-500">Nenhum chamado encontrado.</td></tr>';
+            return;
+        }
 
-if(lista.length === 0) {
-    corpoTabela.innerHTML = '<tr><td colspan="7" class="p-4 text-center text-gray-500">Nenhum chamado encontrado.</td></tr>';
-    return;
-}
-
-lista.forEach((ticket, index) => {
-    const linha = `
-        <tr class="row-hover">
-            <td style="font-weight: bold; color: #888;">${index + 1}</td>
-            
-            <td>${ticket.title}</td>
-            <td>${ticket.category}</td>
-            <td>
-                <span class="${corBadge(ticket.priority)}">
-                    ${ticket.priority}
-                </span>
-            </td>
-            <td>${ticket.status}</td>
-            <td>${new Date(ticket.created_at).toLocaleDateString()}</td>
-            <td>
-                <a href="detalhes.html?id=${ticket.id}" class="link-detalhes">Detalhes</a>
-            </td>
-        </tr>
-    `;
-    corpoTabela.innerHTML += linha;
-});
+        lista.forEach(ticket => {
+            const linha = `
+                <tr class="row-hover">
+                    <td>${ticket.title}</td>
+                    <td>${ticket.category}</td>
+                    <td>
+                        <span class="${corBadge(ticket.priority)}">
+                            ${ticket.priority}
+                        </span>
+                    </td>
+                    <td>${ticket.status}</td>
+                    <td>${new Date(ticket.created_at).toLocaleDateString()}</td>
+                    <td>
+                        <a href="detalhes.html?id=${ticket.id}" class="link-detalhes">Detalhes</a>
+                    </td>
+                </tr>
+            `;
+            corpoTabela.innerHTML += linha;
+        });
 
         document.getElementById('infoPagina').innerText = `Página ${paginaAtual}`;
         document.getElementById('proxBtn').disabled = !dados.nextPage;
