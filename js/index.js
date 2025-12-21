@@ -51,7 +51,16 @@ async function carregarTickets() {
         document.getElementById('antBtn').disabled = paginaAtual === 1;
 
     } catch (erro) {
-        alert("Erro ao carregar: " + erro);
+        Toastify({
+            text: "Erro ao carregar! Erro: " + erro,
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+            }
+        }).showToast();
         console.error(erro);
     }
 }

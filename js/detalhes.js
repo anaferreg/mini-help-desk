@@ -4,7 +4,16 @@ const params = new URLSearchParams(window.location.search);
 const idTicket = params.get("id");
 
 if(!idTicket) {
-    alert("Ticket não identificado!");
+    Toastify({
+        text: "Chamado não identificado!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+        }
+    }).showToast();
     window.location.href = "index.html";
 }
 
@@ -20,7 +29,16 @@ async function carregarDados() {
         document.getElementById('priority').value = ticket.priority;
 
     } catch (e) {
-        alert("Erro ao buscar o chamado");
+        Toastify({
+            text: "Erro ao buscar o chamado!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+            }
+        }).showToast();
     }
 }
 
@@ -50,10 +68,28 @@ async function salvarAlteracoes() {
             window.location.href = "index.html";
         } else {
             const erro = await resp.json();
-            alert("Erro:" + JSON.stringify(erro));
+            Toastify({
+                text: "Ops! Algo deu errado:" + JSON.stringify(erro),
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                }
+            }).showToast();
         }
     } catch (e) {
-        alert("Erro de conexão");
+        Toastify({
+            text: "Erro na conexão!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+            }
+        }).showToast(); 
     }
 }
 
@@ -72,7 +108,16 @@ async function excluir() {
             }).showToast();
             window.location.href = "index.html";
         } catch (e) {
-            alert("Erro ao excluir");
+            Toastify({
+                text: "Erro ao excluir!",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                }
+            }).showToast();
         }
     }
 }

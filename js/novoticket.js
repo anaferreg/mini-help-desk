@@ -40,8 +40,27 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
         } else {
             const erro = await resp.json();
             alert("Erro: " + JSON.stringify(erro));
+            Toastify({
+                text: "Erro: " + JSON.stringify(erro.code, erro.message),
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                }
+            }).showToast();
         }
     } catch (e) {
-        alert("Erro de conexão");
+        Toastify({
+            text: "Erro de conexão!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+            }
+        }).showToast();
     }
 });
