@@ -42,9 +42,8 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
             }, 8200);
         } else {
             const erro = await resp.json();
-            alert("Erro: " + JSON.stringify(erro));
             Toastify({
-                text: "Erro: " + JSON.stringify(erro.code, erro.message),
+                text: "Erro: " + JSON.stringify(erro.message),
                 duration: 8000,
                 close: true,
                 gravity: "top",
