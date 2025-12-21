@@ -62,10 +62,10 @@ function corBadge(prioridade) {
     return 'badge badge-baixa';
 }
 
-function mudarPagina(direcao) {
-    paginaAtual += direcao;
-    carregarTickets();
-}
+// function mudarPagina(direcao) {
+//     paginaAtual += direcao;
+//     carregarTickets();
+// }
 
 document.getElementById('filtrarBtn').addEventListener('click', () => {
     paginaAtual = 1;
