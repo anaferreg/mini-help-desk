@@ -14,7 +14,9 @@ if(!idTicket) {
             background: "linear-gradient(to right, #ff5f6d, #ffc371)",
         }
     }).showToast();
-    window.location.href = "index.html";
+    setTimeout(() => {
+    window.location.href = "outra-pagina.html";
+    }, 8200);
 }
 
 async function carregarDados() {
@@ -65,7 +67,10 @@ async function salvarAlteracoes() {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 }
             }).showToast();
-            //window.location.href = "index.html";
+
+            setTimeout(() => {
+            window.location.href = "outra-pagina.html";
+            }, 8200);
         } else {
             const erro = await resp.json();
             Toastify({
@@ -106,7 +111,10 @@ async function excluir() {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 }
             }).showToast();
-            window.location.href = "index.html";
+
+            setTimeout(() => {
+            window.location.href = "outra-pagina.html";
+            }, 8200);
         } catch (e) {
             Toastify({
                 text: "Erro ao excluir!",
