@@ -36,6 +36,7 @@ async function carregarTickets() {
                             ${ticket.priority}
                         </span>
                     </td>
+                    <td>${new Date(ticket.created_at).toLocaleDateString()}</td>
                     <td>${ticket.status}</td>
                     <td>
                         <a href="detalhes.html?id=${ticket.id}" class="link-detalhes">Detalhes</a>
