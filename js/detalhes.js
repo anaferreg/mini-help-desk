@@ -38,7 +38,16 @@ async function salvarAlteracoes() {
         });
         
         if(resp.ok) {
-            alert("Atualizado com sucesso!");
+            Toastify({
+                text: "Chamado alterado com sucesso!",
+                duration: 3000,
+                gravity: "top", 
+                position: "right", 
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                }
+            }).showToast();
+            window.location.href = "index.html";
         } else {
             const erro = await resp.json();
             alert("Erro:" + JSON.stringify(erro));
@@ -52,7 +61,15 @@ async function excluir() {
     if(confirm("Tem certeza que deseja excluir?")) {
         try {
             await fetch(`${API_BASE_URL}/${idTicket}`, { method: "DELETE" });
-            alert("Excluído!");
+            Toastify({
+                text: "Chamado excluído com sucesso!",
+                duration: 3000,
+                gravity: "top", 
+                position: "right", 
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                }
+            }).showToast();
             window.location.href = "index.html";
         } catch (e) {
             alert("Erro ao excluir");

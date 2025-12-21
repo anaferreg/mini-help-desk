@@ -27,7 +27,15 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
         });
 
         if(resp.ok) {
-            alert("Chamado criado com sucesso!");
+            Toastify({
+                text: "Criado com sucesso!",
+                duration: 3000,
+                gravity: "top", 
+                position: "right", 
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                }
+            }).showToast();
             window.location.href = "index.html";
         } else {
             const erro = await resp.json();
