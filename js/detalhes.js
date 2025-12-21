@@ -6,7 +6,7 @@ const idTicket = params.get("id");
 if(!idTicket) {
     Toastify({
         text: "Chamado não identificado!",
-        duration: 3000,
+        duration: 8000,
         close: true,
         gravity: "top",
         position: "right",
@@ -31,7 +31,7 @@ async function carregarDados() {
     } catch (e) {
         Toastify({
             text: "Erro ao buscar o chamado!",
-            duration: 3000,
+            duration: 8000,
             close: true,
             gravity: "top",
             position: "right",
@@ -58,7 +58,7 @@ async function salvarAlteracoes() {
         if(resp.ok) {
             Toastify({
                 text: "Chamado alterado com sucesso!",
-                duration: 3000,
+                duration: 8000,
                 gravity: "top", 
                 position: "right", 
                 style: {
@@ -70,7 +70,7 @@ async function salvarAlteracoes() {
             const erro = await resp.json();
             Toastify({
                 text: "Ops! Algo deu errado:" + JSON.stringify(erro),
-                duration: 3000,
+                duration: 8000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -82,7 +82,7 @@ async function salvarAlteracoes() {
     } catch (e) {
         Toastify({
             text: "Erro na conexão!",
-            duration: 3000,
+            duration: 8000,
             close: true,
             gravity: "top",
             position: "right",
@@ -99,7 +99,7 @@ async function excluir() {
             await fetch(`${API_BASE_URL}/${idTicket}`, { method: "DELETE" });
             Toastify({
                 text: "Chamado excluído com sucesso!",
-                duration: 3000,
+                duration: 8000,
                 gravity: "top", 
                 position: "right", 
                 style: {
@@ -110,7 +110,7 @@ async function excluir() {
         } catch (e) {
             Toastify({
                 text: "Erro ao excluir!",
-                duration: 3000,
+                duration: 8000,
                 close: true,
                 gravity: "top",
                 position: "right",

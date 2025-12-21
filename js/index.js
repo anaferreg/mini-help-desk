@@ -53,7 +53,7 @@ async function carregarTickets() {
     } catch (erro) {
         Toastify({
             text: "Erro ao carregar! Erro: " + erro,
-            duration: 3000,
+            duration: 8000,
             close: true,
             gravity: "top",
             position: "right",

@@ -29,7 +29,7 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
         if(resp.ok) {
             Toastify({
                 text: "Criado com sucesso!",
-                duration: 3000,
+                duration: 8000,
                 gravity: "top", 
                 position: "right", 
                 style: {
@@ -42,7 +42,7 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
             alert("Erro: " + JSON.stringify(erro));
             Toastify({
                 text: "Erro: " + JSON.stringify(erro.code, erro.message),
-                duration: 3000,
+                duration: 8000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -54,7 +54,7 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
     } catch (e) {
         Toastify({
             text: "Erro de conexão!",
-            duration: 3000,
+            duration: 10000,
             close: true,
             gravity: "top",
             position: "right",
