@@ -36,9 +36,9 @@ document.getElementById('formTicket').addEventListener('submit', async (e) => {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 }
             }).showToast();
-            
+
             setTimeout(() => {
-            window.location.href = "outra-pagina.html";
+            window.location.href = "index.html";
             }, 8200);
         } else {
             const erro = await resp.json();

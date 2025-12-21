@@ -15,7 +15,7 @@ if(!idTicket) {
         }
     }).showToast();
     setTimeout(() => {
-    window.location.href = "outra-pagina.html";
+    window.location.href = "index.html";
     }, 8200);
 }
 
@@ -69,7 +69,7 @@ async function salvarAlteracoes() {
             }).showToast();
 
             setTimeout(() => {
-            window.location.href = "outra-pagina.html";
+            window.location.href = "index.html";
             }, 8200);
         } else {
             const erro = await resp.json();
@@ -113,7 +113,7 @@ async function excluir() {
             }).showToast();
 
             setTimeout(() => {
-            window.location.href = "outra-pagina.html";
+            window.location.href = "index.html";
             }, 8200);
         } catch (e) {
             Toastify({
