@@ -6,7 +6,7 @@ const idTicket = params.get("id");
 if(!idTicket) {
     Toastify({
         text: "Chamado não identificado!",
-        duration: 8000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",
@@ -16,7 +16,7 @@ if(!idTicket) {
     }).showToast();
     setTimeout(() => {
     window.location.href = "index.html";
-    }, 8200);
+    }, 3200);
 }
 
 async function carregarDados() {
@@ -33,7 +33,7 @@ async function carregarDados() {
     } catch (e) {
         Toastify({
             text: "Erro ao buscar o chamado!",
-            duration: 8000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -60,7 +60,7 @@ async function salvarAlteracoes() {
         if(resp.ok) {
             Toastify({
                 text: "Chamado alterado com sucesso!",
-                duration: 8000,
+                duration: 3000,
                 gravity: "top", 
                 position: "right", 
                 style: {
@@ -70,12 +70,12 @@ async function salvarAlteracoes() {
 
             setTimeout(() => {
             window.location.href = "index.html";
-            }, 8200);
+            }, 3200);
         } else {
             const erro = await resp.json();
             Toastify({
                 text: "Ops! Algo deu errado:" + JSON.stringify(erro),
-                duration: 8000,
+                duration: 3000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -87,7 +87,7 @@ async function salvarAlteracoes() {
     } catch (e) {
         Toastify({
             text: "Erro na conexão!",
-            duration: 8000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -104,7 +104,7 @@ async function excluir() {
             await fetch(`${API_BASE_URL}/${idTicket}`, { method: "DELETE" });
             Toastify({
                 text: "Chamado excluído com sucesso!",
-                duration: 8000,
+                duration: 3000,
                 gravity: "top", 
                 position: "right", 
                 style: {
@@ -114,11 +114,11 @@ async function excluir() {
 
             setTimeout(() => {
             window.location.href = "index.html";
-            }, 8200);
+            }, 3200);
         } catch (e) {
             Toastify({
                 text: "Erro ao excluir!",
-                duration: 8000,
+                duration: 3000,
                 close: true,
                 gravity: "top",
                 position: "right",
