@@ -80,6 +80,27 @@ Como o foco do projeto é a entrega contínua via Render, a execução local é 
 
 ---
 
+## 📸 Evidências do Backend (Xano)
+
+Estrutura da tabela de Tickets com tipos de dados validados.
+
+![alt text](<print banco de dados 1.png>)
+
+Configuração de paginação Server-side via parâmetros externos.
+
+![alt text](<print da api e endpoints.png>)
+
+Estrutura de resposta JSON incluindo metadados de paginação (requisito 2.2).
+
+![alt text](<print do endpoint get e filters busca .png>)
+![alt text](<print do endpoint get e output .png>)
+
+Implementação de filtros de busca por título e status no backend.
+
+![alt text](<print swagger do mini helpdesk.png>)
+
+---
+
 ## 📞 Contato
 
 Desenvolvido por **Analice Ferreira Gomes**.
